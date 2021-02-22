@@ -1,1 +1,3 @@
-# LP2
+# Repositório criado para LP2
+
+### Nathan
