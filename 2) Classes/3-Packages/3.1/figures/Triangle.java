@@ -20,6 +20,5 @@ public class Triangle {
     public void paint (Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(fundo);
-		g2d.fillPolygon(new int[] {this.x1, this.x2, this.x3}, new int[] {this.y1, this.y2, this.y3}, 3);
 	}
 }
