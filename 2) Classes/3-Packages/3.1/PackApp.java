@@ -14,7 +14,7 @@ class PackApp {
 class PackFrame extends JFrame {
     Rect r1;
     Ellipse e1;
-    Traingle t1;
+    Triangle t1;
 
     PackFrame () {
         this.addWindowListener (
