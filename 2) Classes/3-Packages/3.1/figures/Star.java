@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
+package figures;
 public class TriangleTest {
 
     public static void main(String[] args) {
@@ -68,9 +68,6 @@ public class TriangleTest {
             g2d.setColor(Color.blue);
             g2d.fill(poly);
 
-            //g2d.setColor(Color.GREEN);
-            //g2d.translate(50, 100);
-            //g2d.fill(triangleShape);
             g2d.dispose();
         }
     }
