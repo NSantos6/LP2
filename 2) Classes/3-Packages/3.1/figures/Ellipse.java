@@ -26,6 +26,3 @@ public class Ellipse {
     }
 }
 
-    © 2021 GitHub, Inc.
-    Terms
-    Pr
