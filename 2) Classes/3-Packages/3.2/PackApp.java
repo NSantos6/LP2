@@ -28,7 +28,7 @@ class PackFrame extends JFrame {
         this.setSize(350, 350);
         this.r1 = new Rect(50, 50, 120, 30, Color.pink, Color.black);
         this.e1 = new Ellipse(50, 100, 100, 60, Color.magenta, Color.orange);
-        this.t1 = new Triangle(50, 145, 116, 120, Color.red, Color.lightGray);
+        this.t1 = new Triangle(50, 145, 116, 120,150,200 Color.red, Color.lightGray);
     }
 
     public void paint (Graphics g) {
