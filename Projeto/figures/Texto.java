@@ -2,12 +2,12 @@ package figures;
 
 import java.awt.*;
 public  class Texto extends Figure{
-    private String palavra, fonte;
+    	private String palavra, fonte;
 	private int tamanho;
-    public Texto (String palavra, int x, int y, int tamanho, Color fundo) {
-	this.palavra = palavra;
-        this.fonte = fonte;
-	this.tamanho = tamanho;
+    	public Texto (String palavra, int x, int y, int tamanho, Color fundo) {
+		this.palavra = palavra;
+        	this.fonte = fonte;
+		this.tamanho = tamanho;
     }
     @Override
     public void paint (Graphics g) {
