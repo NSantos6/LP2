@@ -51,7 +51,7 @@ class ListFrame extends JFrame {
                     	figs.add(new Triangl(x1, x2, x3, y1, y2,y3, fundo));
                     } else if (evt.getKeyChar() == 'p'){
                         int tamanho = rand.nextInt(40);
-                        figs.add(new Texto("Olá, teste", x, y, tamanho, fundo));
+                        figs.add(new Texto("Olá, teste", x, y, tamanho, "Calibri", fundo));
                     }
                     repaint();
                 }
