@@ -4,7 +4,7 @@ import java.awt.*;
 public  class Texto extends Figure{
     	String palavra, fonte;
 	int tamanho;
-    	public Texto (String palavra, int tamanho, String, fonte, Color fundo) {
+    	public Texto (String palavra, int tamanho, String fonte, Color fundo) {
 		this.palavra = palavra;
         	this.fonte = fonte;
 		this.tamanho = tamanho;
