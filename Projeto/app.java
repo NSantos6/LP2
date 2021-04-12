@@ -52,7 +52,7 @@ class ListFrame extends JFrame {
                     } else if (evt.getKeyChar() == 't') {
                     	figs.add(new Triangl(x1, x2, x3, y1, y2,y3, fundo));
                     } else if (evt.getKeyChar() == 'p'){
-                        figs.add(new Texto("Olá, teste", x, y, tamanho, "Calibri", fundo));
+                        figs.add(new Texto("Olá, teste", tamanho, "Calibri", fundo));
                     }
                     repaint();
                 }
