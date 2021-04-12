@@ -2,8 +2,8 @@ package figures;
 
 import java.awt.*;
 public  class Texto extends Figure{
-    	private String palavra, fonte;
-	private int tamanho;
+    	String palavra, fonte;
+	int tamanho;
     	public Texto (String palavra, int x, int y, int tamanho, String, fonte, Color fundo) {
 		this.palavra = palavra;
         	this.fonte = fonte;
