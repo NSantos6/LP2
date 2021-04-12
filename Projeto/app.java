@@ -41,6 +41,8 @@ class ListFrame extends JFrame {
                     int y2 = rand.nextInt(350);
                     int y3 = rand.nextInt(350);
                     
+                    int tamanho = rand.nextInt(70);
+                    
                     Color contorno = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
                     Color fundo = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
                     if (evt.getKeyChar() == 'r') {
@@ -50,7 +52,7 @@ class ListFrame extends JFrame {
                     } else if (evt.getKeyChar() == 't') {
                     	figs.add(new Triangl(x1, x2, x3, y1, y2,y3, fundo));
                     } else if (evt.getKeyChar() == 'p'){
-                        int tamanho = rand.nextInt(40);
+
                         figs.add(new Texto("Olá, teste", x, y, tamanho, "Calibri", fundo));
                     }
                     repaint();
