@@ -8,8 +8,9 @@ public class Triangl extends Figure {
      int x1,x2,x3;
 	  private int y1,y2,y3;
 	   private Color fundo;
+       private Color contorno;
 
-    public Triangl (int x1,int x2,int x3,int y1,int y2,int y3, Color fundo) {
+    public Triangl (int x1,int x2,int x3,int y1,int y2,int y3, Color fundo, Color contorno) {
         this.x1 = x1;
 	      this.x2 = x2;
 	      this.x3 = x3;
@@ -17,7 +18,13 @@ public class Triangl extends Figure {
 	      this.y2 = y2;
 	      this.y3 = y3;
 	      this.fundo = fundo;
+          this.contorno = contorno;
     }
+    public void drag(int dx, int dy){
+        this.x += dx;
+        this.y += dy;
+    }
+
     @Override
     public void print () {
         System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d,%d,%d).\n",
