@@ -3,12 +3,14 @@ package figures;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Ellipse2D.Double;
+import java.util.Random;
 
 public class Ellipse extends Figure {
     int x, y;
     int w, h;
     Color contorno;
     Color fundo;
+    Random rand = new Random();
 
     public Ellipse (int x, int y, int w, int h, Color contorno, Color fundo) {
         this.x = x;
@@ -33,5 +35,7 @@ public class Ellipse extends Figure {
     public void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.draw(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
+        g2d.fillOval(x, y, w, h);
+        g2d.setColor(new Color (rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)));
     }
 }
