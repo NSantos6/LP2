@@ -3,12 +3,14 @@ package figures;
 import java.awt.*;
 import java.awt.Graphics;
 import java.awt.geom.Line2D;
+import java.util.Random;
 
 public class Triangl extends Figure {
      int x1,x2,x3;
 	  private int y1,y2,y3;
 	   private Color fundo;
        private Color contorno;
+       Random rand = new Random();
 
     public Triangl (int x1,int x2,int x3,int y1,int y2,int y3, Color fundo, Color contorno) {
         this.x1 = x1;
@@ -34,5 +36,7 @@ public class Triangl extends Figure {
     public void paint (Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
         g.drawPolygon(new int[] {x1, x2, x3}, new int[] {y1, y2, y3}, 3);
+        g.fillPolygon(new int[] {x1, x2, x3}, new int[] {y1, y2, y3}, 3);
+        g2d.setColor(new Color (rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)));
 	}
 }
