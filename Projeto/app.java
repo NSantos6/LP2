@@ -118,7 +118,7 @@ class ListFrame extends JFrame {
                                 repaint();
                             }
                         } 
-                    } else if (evt.getKeyChar() == '+') { // Aumenta a figura
+                    } else if (evt.getKeyChar() == '+') { // Aumenta a figura presssionando '+'
 						for(Figure fig: figs){
 							if(focus == fig){
 								fig.aumento(1,1);
@@ -126,8 +126,7 @@ class ListFrame extends JFrame {
 								repaint();
 							}
 						}
-                    }else if (evt.getKeyChar() == '-') { // Diminui a figura
-                        //diminui a figura
+                    }else if (evt.getKeyChar() == '-') { // Diminui a figura pressionando '-'
 						for(Figure fig: figs){
 							if(focus == fig){
 								fig.aumento(-1,-1);
