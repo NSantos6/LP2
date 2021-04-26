@@ -100,13 +100,13 @@ class ListFrame extends JFrame {
                     
                     Color contorno = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
                     Color fundo = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
-                    if (evt.getKeyChar() == 'r') {
+                    if (evt.getKeyChar() == 'r') { // Gera Retângulo
                         figs.add(new Rect(x, y, w, h, contorno, fundo));
-                    } else if (evt.getKeyChar() == 'e') {
+                    } else if (evt.getKeyChar() == 'e') { //Gera Elipse
                         figs.add(new Ellipse(x, y, w, h, contorno, fundo));
-                    } else if (evt.getKeyChar() == 't') {
+                    } else if (evt.getKeyChar() == 't') { // Gera Triângulo
                     	figs.add(new Triangl(x1, x2, x3, y1, y2,y3,contorno, fundo));
-                    } else if (evt.getKeyChar() == 'p'){
+                    } else if (evt.getKeyChar() == 'p'){ //Gera Palavra
                         int tamanho = rand.nextInt(40);
                         figs.add(new Texto("alo, teste", x, y, tamanho, "Italic",  fundo));
                     }else if(evt.getKeyChar() == 'l'){ // Limpa as figuras
