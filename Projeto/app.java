@@ -73,7 +73,7 @@ class ListFrame extends JFrame {
 					focus.y = evt.getY()-focus.h/2;
 					r.x = focus.x-1;
 					r.y = focus.y-1;
-			        //fig.drag(evt.getX()-focus.x, evt.getY()-focus.y);
+			        fig.drag(evt.getX()-focus.x, evt.getY()-focus.y);
 			        repaint();
 		    }
 	     }
