@@ -122,7 +122,7 @@ public interface selfDrivable{
 
 public class Carro implements selfDrivable{
     public String dest, drive;
-    public Carro (String dest){
+    public Carro (String dest, String drive){
         this.dest = dest;
         this.drive = drive;
     }
@@ -142,7 +142,7 @@ public class Carro implements selfDrivable{
 
 public class Aviao implements selfDrivable{
     public String dest, drive;
-    public Aviao (String dest){
+    public Aviao (String dest, String drive){
         this.dest = dest;
         this.drive = drive;
     }
@@ -160,7 +160,7 @@ public class Aviao implements selfDrivable{
 
 public class Metro implements selfDrivable{
     public String dest, drive;
-    public Metro(String dest){
+    public Metro(String dest, String drive){
         this.dest = dest;
         this.drive = drive;
     }
