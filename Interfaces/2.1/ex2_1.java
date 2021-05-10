@@ -63,7 +63,7 @@ public class Triangle implements figuraCalculavel{
     }
 
     public class Rect implements figuraCalculavel{
-        public int x, y, w, h;
+        public int base, h;
 
         public Rect (int base, int h) {
             this.base = base;
