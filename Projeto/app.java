@@ -108,7 +108,7 @@ class ListFrame extends JFrame {
 	            for (Figure fig: figs) {
 		        if (focus == fig) {
 					repaint();
-			    if (evt.getKeyCode() == KeyEvent.VK_DELETE) { // Deleta a figura em que o Foco está pressionando 'DEL'
+			    if (evt.getKeyCode() == KeyEvent.VK_DELETE) { // Deleta a figura em que o Foco está ativo pressionando 'DEL'
 			        figs.remove(fig);
 				focus = null;
 				repaint();
