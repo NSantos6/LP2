@@ -1,41 +1,32 @@
 package figures;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Double;
+import java.awt.geom.*;
 import java.util.Random;
 
 public class Ellipse extends Figure {
-    int x, y;
-    int w, h;
-    Color contorno;
-    Color fundo;
+    public int x, y, w, h;
     Random rand = new Random();
 
-    public Ellipse (int x, int y, int w, int h, Color contorno, Color fundo) {
-        this.x = x;
-        this.y = y;
-        this.w = w;
-        this.h = h;
-        this.contorno = contorno;
-        this.fundo = fundo;
+
+    public Ellipse (int x, int y, int w, int h, Color fundo, Color contorno) {
+        super(x, y, w, h, fundo, contorno);
     }
 
-    public void drag(int dx, int dy){
-        this.x += dx;
-        this.y += dy;
-    }
-    
-    @Override
-    public void print () {
-        System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
+
+
+    private void print () {
+        System.out.format("Ellipse de tamanho (%d,%d) na posicao (%d,%d).\n",
             this.w, this.h, this.x, this.y);
     }
-    @Override
+
     public void paint (Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g2d.draw(new Ellipse2D.Double(this.x,this.y, this.w,this.h));
-        g2d.fillOval(x, y, w, h);
-        g2d.setColor(new Color (rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)));
+	    //g2d.setColor(new Color(this.r,this.g,this.b));
+        g2d.draw(new Ellipse2D.Double(this.x, this.y, this.w, this.h));
+	    g2d.fillOval(this.x,this.y, this.w,this.h);
+        //g2d.drawOval(this.x,this.y, this.w,this.h);
+        g2d.setColor(fundo);
+	    //g2d.drawOval(this.x,this.y, this.w,this.h);
     }
 }
