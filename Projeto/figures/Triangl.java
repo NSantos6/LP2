@@ -6,28 +6,20 @@ import java.awt.geom.Line2D;
 import java.util.Random;
 
 public class Triangl extends Figure {
-     int x1,x2,x3;
-	  private int y1,y2,y3;
+     public int x1,x2,x3;
+	  public int y1,y2,y3;
+      public int x,y,w, h;
+
 	   private Color fundo;
        private Color contorno;
        Random rand = new Random();
 
-    public Triangl (int x1,int x2,int x3,int y1,int y2,int y3, Color fundo, Color contorno) {
-        this.x1 = x1;
-	      this.x2 = x2;
-	      this.x3 = x3;
-        this.y1 = y1;
-	      this.y2 = y2;
-	      this.y3 = y3;
-	      this.fundo = fundo;
-          this.contorno = contorno;
-    }
-    public void drag(int dx, int dy){
-        this.x += dx;
-        this.y += dy;
+
+    public Triangl (int x1, int x2, int x3, int y1, int y2, int y3, int x, int y, int w, int h, Color fundo, Color contorno){
+        super(x, y, w, h, fundo, contorno);
     }
 
-    @Override
+    //@Override
     public void print () {
         System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d,%d,%d).\n",
             this.x1, this.x2, this.x3, this.y1,this.y2,this.y3);
