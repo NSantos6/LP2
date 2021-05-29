@@ -1,31 +1,25 @@
 package figures;
-
 import java.awt.*;
-import java.util.Random;
+import java.awt.Graphics;
 
 public class Rect extends Figure {
-    Random rand = new Random();
-    public int contornoR, contornoG, contornoB, fundoR, fundoG, fundoB;
-    public int x, y, w, h;
 
-
-    public Rect (int x, int y, int w, int h, Color fundo, Color contorno){
-        super(x, y, w, h, fundo, contorno);
+    public Rect (int x, int y, int w, int h, int contornoR, int contornoG, int contornoB, int fundoR, int fundoG, int fundoB) {
+        super(x, y, w, h, contornoR, contornoG, contornoB, fundoR, fundoG, fundoB);
     }
 
-    private void print () {
-        System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
-            this.w, this.h, this.x, this.y);
-    }
-    @Override
-    public void paint (Graphics g) {
+
+    public void paint (Graphics g, boolean focused) {
         Graphics2D g2d = (Graphics2D) g;
-
-        g2d.setColor(Color.BLUE);
-        g2d.fillRect(this.x, this.y, this.w, this.h);
-        g2d.setColor(new Color(0,255,0));
+		
+	if (focused) {
+	    g2d.setPaint(Color.RED);
+	    g2d.drawRect(this.x-3, this.y-3, this.w+6, this.h+6);
+	}
+		
+	g2d.setColor(new Color(this.contornoR,this.contornoG,this.contornoB));
+	g2d.fillRect(this.x,this.y, this.w,this.h);
+        g2d.setColor(new Color(this.fundoR,this.fundoG,this.fundoB));
         g2d.drawRect(this.x,this.y, this.w,this.h);
-        g2d.fillRect(x+1, y+1, this.w-1, this.h-1);
-
     }
 }
