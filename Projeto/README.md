@@ -1,5 +1,5 @@
 # Projeto -LP2 - Manual
-## O projeto conta com o uso do Mouse para arrastar as figuras.
+## O projeto conta com o uso do Mouse para arrastar as figuras. Além de contar também com o salvamento do atual estado do programa "proj.bin"
 
 # Comandos de teclado do projeto
 - Tecla 'r' desenha um retângulo
