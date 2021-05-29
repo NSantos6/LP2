@@ -128,8 +128,8 @@ class ListFrame extends JFrame {
             new KeyAdapter() {
                 public void keyPressed (KeyEvent evt) {
 		     		mp = getMousePosition();
-					int circleH = 200;
-					int circleW = 200;
+					int circleH = 15;
+					int circleW = 5;
 		    		int x = mp.x;
                     int y = mp.y;
                     int w = rand.nextInt(50);
