@@ -21,7 +21,7 @@ import figures.*;
 
 // == Projeto Parte 2/2 ==
 
-class App {
+class app {
     public static void main (String[] args) {
         ListFrame frame = new ListFrame();
         frame.setVisible(true);
