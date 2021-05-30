@@ -13,6 +13,8 @@
 - Tecla '+' aumenta o tamanho da figura que está em foco.
 - Tecla '-' diminui o tamanho da figura que está em foco.
 - Tecla 'l' limpa todas as figuras de uma vez.
+- Tecla 'f' muda a cor de fundo da figura selecionada
+- Tecla 'c' muda a cor de contorno da figura selecionada
 
 # Toolbox
 - Retângulo
