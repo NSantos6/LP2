@@ -21,7 +21,7 @@ import figures.*;
 
 // == Projeto Parte 2/2 ==
 
-class app {
+class App {
     public static void main (String[] args) {
         ListFrame frame = new ListFrame();
         frame.setVisible(true);
@@ -187,10 +187,10 @@ class ListFrame extends JFrame {
 			    else if (evt.getKeyChar() == '-') {  // Diminui a figure pressionando '-'
 				fig.resize(-1,-1);
 			    }
-			    else if (evt.getKeyChar() == 'f') {  //muda cor de fundo da figura selecionada
+			    else if (evt.getKeyChar() == 'c') {  //muda cor de contorno da figura selecionada
 				fig.fundo(fundoR,fundoG,fundoB);
 			    }
-			    else if (evt.getKeyChar() == 'c') {  //muda cor de contorno da figura selecionada
+			    else if (evt.getKeyChar() == 'f') {  //muda cor de fundo da figura selecionada
 				fig.contorno(contornoR, contornoG, contornoB);
 			    }
 			}
