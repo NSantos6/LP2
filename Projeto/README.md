@@ -23,3 +23,5 @@
 - Retângulo
 - Elipse
 - Retângulo redondo
+- Linha
+- Arco
