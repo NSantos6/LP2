@@ -2,6 +2,7 @@
 ## O projeto conta com o uso do Mouse para arrastar as figuras. Além de contar também com o salvamento do atual estado do programa "proj.bin"
 
 # Comandos de teclado do projeto
+- Troca de foco usando a tecla 'Alt', por algum motivo a tecla TAB não funcionou no meu código
 - Tecla 'r' desenha um retângulo
 - Tecla 'k' desenha um retângulo redondo
 - Tecla 'e' desenha uma elipse
