@@ -119,7 +119,7 @@ class ListFrame extends JFrame {
 
 			if ((focus_but == null) && (focus == null)){
 				if(button_pos == 1){
-					figs.add(new RoundRect(x, y, rand.nextInt(50), rand.nextInt(50), 0, 0, 181,171,37,15,10,187));
+					figs.add(new RoundRect(x, y, 40, 40, 15, 10, 181,171,37,15,10,187));
 					focus = figs.get(figs.size() - 1);
 				}else if(button_pos == 2){
 					figs.add(new Rect(x, y, rand.nextInt(50), rand.nextInt(50), 0, 255, 0,100,255,0));
