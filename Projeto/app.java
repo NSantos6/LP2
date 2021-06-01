@@ -29,12 +29,13 @@ class App {
 }
 
 class ListFrame extends JFrame {
-    ArrayList<Figure> figs = new ArrayList<Figure>();
-    ArrayList<Button> buts = new ArrayList<Button>();
-    Figure focus = null;
-    Button focus_but = null;
-    Random rand = new Random();
+    private ArrayList<Figure> figs = new ArrayList<Figure>();
+    private ArrayList<Button> buts = new ArrayList<Button>();
+    private Figure focus = null;
+    private Button focus_but = null;
+    private Random rand = new Random();
 	Point mp;
+	int button_pos;
 
     ListFrame () {
 
@@ -68,6 +69,8 @@ class ListFrame extends JFrame {
 	buts.add(new Button(1, new RoundRect(0,0,0,0,15,10,181,171,37,15,10,187)));
 	buts.add(new Button(2, new Rect(0, 0, 0, 0, 0, 255, 0,100,255,0)));
 	buts.add(new Button(3, new Ellipse(0,0,0,0,13,21,252,13,21,252)));
+	buts.add(new Button(4, new Linha(0, 0, 0, 0, 0, 255, 0,100,255,0)));
+	buts.add(new Button(5, new Arco(0,0,0,0,25,310,255,255,51,0,0,0)));
 	
 	this.addMouseListener(
 	    new MouseAdapter() {
@@ -94,17 +97,46 @@ class ListFrame extends JFrame {
 			    break;
 			}
 		    }
-		    if ((focus_but != null) && (focus == null)) { //Define o foco do Button
+
+			if (focus_but != null) {
 		        if (focus_but.idx == 1) {
-				figs.add(new RoundRect(x+175,y+100, rand.nextInt(50),rand.nextInt(50),15,10,0,0,255,0,0,255));   //x+175,y+100
+					button_pos = 1;
 			}
 			else if (focus_but.idx == 2) {
-				figs.add(new Rect(x+100, y+25, rand.nextInt(50), rand.nextInt(50), 255, 0, 0,0,0,255)); // x+175, y+25
+			    button_pos = 2;
 			}
 			else if (focus_but.idx == 3) {
-				figs.add(new Ellipse(x+100,y+50, rand.nextInt(50),rand.nextInt(50),0,255,0,0,255,0));  //x+175,y+50
+			    button_pos = 3;
+			}
+			else if (focus_but.idx == 4) {
+			    button_pos = 4;
+			}
+			else if(focus_but.idx == 5){
+				button_pos = 5;
 			}
 		    }
+			repaint();
+
+			if ((focus_but == null) && (focus == null)){
+				if(button_pos == 1){
+					figs.add(new RoundRect(x, y, rand.nextInt(50), rand.nextInt(50), 0, 0, 181,171,37,15,10,187));
+					focus = figs.get(figs.size() - 1);
+				}else if(button_pos == 2){
+					figs.add(new Rect(x, y, rand.nextInt(50), rand.nextInt(50), 0, 255, 0,100,255,0));
+					focus = figs.get(figs.size() - 1);
+				}else if(button_pos == 3){
+					figs.add(new Ellipse(x, y, rand.nextInt(50), rand.nextInt(50), 13,21,252,13,21,252));
+					focus = figs.get(figs.size() - 1);
+				}
+				else if(button_pos == 4){
+					figs.add(new Linha(x, y, rand.nextInt(50), rand.nextInt(50), rand.nextInt(255), rand.nextInt(255), rand.nextInt(255), 0, 0, 0));
+					focus = figs.get(figs.size() - 1);
+				}else if(button_pos == 5){
+					figs.add(new Arco(x, y,rand.nextInt(50), rand.nextInt(50), rand.nextInt(180), rand.nextInt(280),255,255,51,0,0,0));
+					focus = figs.get(figs.size() - 1);
+				}
+				button_pos = 0;
+			}
 		    repaint();
 		}
 	    }
@@ -128,18 +160,26 @@ class ListFrame extends JFrame {
             new KeyAdapter() {
                 public void keyPressed (KeyEvent evt) {
 		     		mp = getMousePosition();
+
 					int circleH = 15;
 					int circleW = 5;
+
 		    		int x = mp.x;
                     int y = mp.y;
-                    int w = rand.nextInt(50);
-                    int h = rand.nextInt(50);
+
+                    int w = rand.nextInt(80);
+                    int h = rand.nextInt(80);
+
 					int contornoR = rand.nextInt(255);
 					int contornoG = rand.nextInt(255);
 					int contornoB = rand.nextInt(255);
+
 					int fundoR = rand.nextInt(255);
 					int fundoG = rand.nextInt(255);
 					int fundoB = rand.nextInt(255);
+
+					int initAngle = rand.nextInt(200);
+					int finalAngle = rand.nextInt(280);
 		    
                     if (evt.getKeyChar() == 'r') {
                         figs.add(new Rect(x, y, w, h, contornoR, contornoG, contornoB, fundoR, fundoG, fundoB));
@@ -158,7 +198,11 @@ class ListFrame extends JFrame {
 						//figs.add(new Circle(x, y, w, h, circleW, circleH, contornoR, contornoG, contornoB, fundoR, fundoG, fundoB));
 					/*}*/else if(evt.getKeyChar() == 'l'){ // Limpa todas as figuras de uma vez, mas caso exista uma figura com foco, esssa não será deletada.
 						figs.clear();
-			}
+					}else if(evt.getKeyChar() == 'a'){
+						figs.add(new Linha(x, y, w, h, contornoR, contornoG, contornoB, fundoR, fundoG, fundoB));
+					}else if(evt.getKeyChar() == 'p'){
+						figs.add(new Arco(x, y, w, h, initAngle, finalAngle, contornoR, contornoG, contornoB, fundoR, fundoG, fundoB));
+					}
 
 			
 	            for (Figure fig: figs) {
@@ -193,6 +237,12 @@ class ListFrame extends JFrame {
 			    else if (evt.getKeyChar() == 'f') {  //muda cor de fundo da figura selecionada
 				fig.contorno(contornoR, contornoG, contornoB);
 			    }
+			}
+			else if(evt.getKeyCode() == KeyEvent.VK_ALT){
+				focus = fig;
+				figs.remove(fig);
+				figs.add(fig);
+				break;
 			}
 		    }
 		    repaint();
