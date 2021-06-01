@@ -5,6 +5,8 @@
 - Tecla 'r' desenha um retângulo
 - Tecla 'k' desenha um retângulo redondo
 - Tecla 'e' desenha uma elipse
+- Tecla 'p' desenha um Arco 
+- Tecla 'a' desenha uma Linha (Reta)
 - Tecla 'DEL' Remove a figura que está em foco no momento
 - Tecla 'Seta p/ cima' move a figura que está em foco para cima.
 - Tecla 'Seta p/ baixo' move a figura que está em foco para baixo.
