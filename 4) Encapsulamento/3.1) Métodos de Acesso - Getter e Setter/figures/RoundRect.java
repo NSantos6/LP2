@@ -28,11 +28,4 @@ public class RoundRect extends Figure {
         g2d.draw(new RoundRectangle2D.Double(this.x,this.y, this.w,this.h, this.circleW,this.circleH));
     }
 
-    public int getcircleW(){
-        return circleW;
-    }
-
-    public int getcircleH(){
-        return circleH;
-    }
 }
