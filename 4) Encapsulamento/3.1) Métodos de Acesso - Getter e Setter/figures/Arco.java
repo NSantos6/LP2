@@ -32,11 +32,4 @@ public class Arco extends Figure {
         g2d.draw(new Arc2D.Double(this.x,this.y, this.w,this.h, this.initAngle,this.finalAngle, Arc2D.PIE));
     }
 
-    public int getInitAngle(){
-        return initAngle;
-    }
-
-    public int getFinalAngle(){
-        return finalAngle;
-    }
 }
